@@ -24,8 +24,7 @@
 			background: linear-gradient(#14ffe9,#ffeb3b,#ff00e0);
 			/*元素背景色线性渐变*/
 			border-radius: 50%;
-			animation: Black 1.5s linear infinite;
-			animation: Circle 5s linear infinite;
+			animation: Black 3s linear infinite;
 		}
 		#inner{
 			height: 180px;
@@ -60,20 +59,17 @@
 		@keyframes Black {
 			0% {
 				filter: hue-rotate(0deg);
-			}
-			100%{
-				filter: hue-rotate(360deg);
-			}
-		}
-		/*关键帧加色相反转滤镜*/
-		@keyframes Circle {
-			from{
 				transform: rotate(0deg);
 			}
-			to{
+			50% {
+				filter: hue-rotate(90deg);
+			}
+			100%{
+				filter: hue-rotate(0deg);
 				transform: rotate(360deg);
 			}
 		}
+		/*关键帧加色相反转旋转滤镜*/
 	</style>
 </head>
 <body>
