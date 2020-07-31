@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Document</title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div.outer{
+			width: 1090px;
+			height: 380px;
+			border: 1px solid red;
+			margin: 0 auto;
+		}
+		div.outer div{
+			float: left;
+		}
+		div.outer div.left{
+			width: 690px;
+			height: 380px;
+			background-color: blue;
+			margin-right: 10px;
+		}
+		div.outer div.right{
+			width: 390px;
+			height: 380px;
+			background-color: orange;
+		}
+		article{
+			width: 500px;
+			height: 200px;
+			border-color: #ccc;
+			margin: 0 auto;
+		}
+		.aaa div{
+			width: 33.3333333%;
+			height: 200px;
+			float: left;
+			background-color: yellow;
+		}
+		.aaa div:first-child{
+			background-color: skyblue;
+		}
+		.aaa div:last-child{
+			background-color: pink;
+		}
+		.bbb div:first-child{
+			width: 100px;
+			height: 200px;
+			background-color: green;
+			float: left;
+		}
+		.right {
+			width: 100px;
+			height: 200px;
+			background-color: purple;
+			float: right;
+		}
+		.bbb div:last-child{
+			height: 200px;
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="outer">
+		<div class="left">
+		</div>
+		<div class="right">		
+		</div>
+	</div>
+<!-- 两列布局 -->
+	<article class="aaa">
+		<div></div>
+		<div></div>
+		<div></div>
+	</article>
+<!-- 子元素均分父元素三列布局 -->
+	<article class="bbb">
+		<div></div>
+		<div class="right"></div>
+		<div></div>
+	</article>
+<!-- 自适应布局，注意div加载顺序 -->
+</body>
+</html>
