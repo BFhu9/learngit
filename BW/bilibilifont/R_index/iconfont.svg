@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<!--
+2013-9-30: Created.
+-->
+<svg>
+<metadata>
+Created by iconfont
+</metadata>
+<defs>
+
+<font id="iconfont" horiz-adv-x="1024" >
+  <font-face
+    font-family="iconfont"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="1024"
+    ascent="896"
+    descent="-128"
+  />
+    <missing-glyph />
+    
+    <glyph glyph-name="icon_youdaohang_xiaodianshitianxian" unicode="&#59192;" d="M1429.942857-128h-836.754286L84.845714 388.388571a295.789714 295.789714 0 0 0 0 415.158858L89.526857 808.228571a293.595429 293.595429 0 0 0 418.377143 0L1429.942857-128z m2658.011429 0h-836.754286L4173.238857 808.374857a293.595429 293.595429 0 0 0 418.377143 0l4.681143-4.827428c113.517714-115.273143 113.517714-300.032 0-415.158858L4087.954286-128z"  horiz-adv-x="4681" />
+
+    
+
+
+  </font>
+</defs></svg>

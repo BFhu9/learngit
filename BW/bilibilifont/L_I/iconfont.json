@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "522871",
+      "name": "频道",
+      "font_class": "pindao",
+      "unicode": "e641",
+      "unicode_decimal": 58945
+    },
+    {
+      "icon_id": "1347981",
+      "name": "动态空-01",
+      "font_class": "dongtaikong-",
+      "unicode": "e6ed",
+      "unicode_decimal": 59117
+    },
+    {
+      "icon_id": "5829814",
+      "name": "主页",
+      "font_class": "home",
+      "unicode": "e76d",
+      "unicode_decimal": 59245
+    },
+    {
+      "icon_id": "11683882",
+      "name": "排行榜",
+      "font_class": "paihangbang",
+      "unicode": "e63e",
+      "unicode_decimal": 58942
+    }
+  ]
+}

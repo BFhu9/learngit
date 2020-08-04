@@ -1,0 +1,23 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "8358862",
+      "name": "下拉箭头",
+      "font_class": "icon-",
+      "unicode": "e50b",
+      "unicode_decimal": 58635
+    },
+    {
+      "icon_id": "9635808",
+      "name": "双向",
+      "font_class": "huaban",
+      "unicode": "e693",
+      "unicode_decimal": 59027
+    }
+  ]
+}

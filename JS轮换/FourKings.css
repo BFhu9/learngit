@@ -1,0 +1,61 @@
+body{
+	font-family: "Arial","Microsoft YaHei","黑体","宋体","sans-serif";
+	background: #CCFFFF;
+}
+h1{
+	width: 100%;
+	text-align: center;
+	padding: 0;
+}
+li{
+	float: left;
+	list-style: none;
+	margin: 10px;
+}
+ul{
+	width: 100%;
+	padding: 0;
+	text-align: center;
+}
+a{
+	text-decoration: none;
+	font-size: 25px;
+	font-weight: bold;
+}
+#Head{
+	font-size: 30px;
+	color: #000;
+}
+#B1{
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+	width: 500px;
+}
+#B2{
+	margin: auto;
+	display: block;
+	width: 700px;
+}
+#KD{
+	color: #993366;
+}
+#BM{
+	color: #FF66CC;
+}
+#RH{
+	color: #CC0000;
+}
+#BB{
+	color: #000000;
+}
+img{
+	vertical-align: middle;
+	height: 550px;
+	width: 650px;	
+	display: block;
+	clear: both;
+}
+h2{
+	text-align: center;
+}
