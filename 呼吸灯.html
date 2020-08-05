@@ -27,10 +27,10 @@
 			position: absolute;
 			top: 50%;
 			left: 50%;
-			width: 60px;
-			height: 60px;
-			margin-top: -30px;
-			margin-left: -30px;
+			width: 50px;
+			height: 50px;
+			margin-top: -25px;
+			margin-left: -25px;
 			background-color: #80E8F3;
 			border-radius: 50%;
 			filter: blur(1px);
@@ -38,7 +38,7 @@
 		div#outer{
 			box-sizing: border-box;
 			height: 100%;
-			border: 4px solid #ffffff;
+			border: 5px solid #ffffff;
 			border-radius: 50%;
 			padding: 20px;
 			animation: breathe 4s linear infinite alternate;
@@ -46,18 +46,25 @@
 		div#inner{
 			height: 100%;
 			border-radius: 50%;
-			border: 3px solid #ffffff;
+			border: 4px solid #ffffff;
 			padding: 20px;
 			animation: breathee 4s linear infinite alternate;
 		}
 		div#inner1{
 			height: 100%;
 			border-radius: 50%;
-			border: 2px solid #ffffff;
+			border: 3px solid #ffffff;
 			padding: 20px;
 			animation: breatheee 4s linear infinite alternate;
 		}
 		div#inner2{
+			height: 100%;
+			border-radius: 50%;
+			border: 2px solid #ffffff;
+			padding: 20px;
+			animation: breatheeee 4s linear infinite alternate;
+		}
+		div#inner3{
 			height: 100%;
 			border-radius: 50%;
 			border: 1px solid #ffffff;
@@ -66,14 +73,17 @@
 			0% {
 				padding: 20px;
 			}
-			25% { 
+			20% { 
 				padding: 20px;
 			 }
-			 50% {
+			 40% {
 				padding: 20px;
 			 }
-			 75% {
+			 60% {
 			 	padding: 20px;
+			 }
+			 80% {
+				padding: 20px;
 			 }
 			 100%{
 				padding: 10px;
@@ -84,13 +94,16 @@
 			0% {
 				padding: 20px;
 			}
-			25% {
+			20% {
 				padding: 20px;
 			}
-			50% {
+			40% {
 				padding: 20px;
 			}
-			75% {
+			60% {
+				padding: 20px;
+			}
+			80% {
 				padding: 10px;
 			}
 			100%{
@@ -101,13 +114,16 @@
 			0% {
 				padding: 20px;
 			}
-			25% {
+			20% {
 				padding: 20px;
 			}
-			50% {
+			40% {
+				padding: 20px;
+			}
+			60% {
 				padding: 10px;
 			}
-			75% {
+			80% {
 				padding: 20px;
 			}
 			100%{
@@ -118,13 +134,36 @@
 			0%{
 				padding: 20px;
 			}
-			25%{
-				padding: 10px;
-			}
-			50%{
+			20%{
 				padding: 20px;
 			}
-			75%{
+			40%{
+				padding: 10px;
+			}
+			60%{
+				padding: 20px;
+			}
+			80%{
+				padding: 20px;
+			}
+			100%{
+				padding: 20px;
+			}
+		}
+		@keyframes breatheeee{
+			0%{
+				padding: 20px;
+			}
+			20%{
+				padding: 10px;
+			}
+			40%{
+				padding: 20px;
+			}
+			60%{
+				padding: 20px;
+			}
+			80%{
 				padding: 20px;
 			}
 			100%{
@@ -140,6 +179,7 @@
 			<div id="inner">
 				<div id="inner1">
 					<div id="inner2">
+						<div id="inner3"></div>
 					</div>
 				</div>
 			</div>
