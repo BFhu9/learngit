@@ -19,55 +19,132 @@
 			line-height: 100%;
 			width: 300px;
 			height: 300px;
-			padding: 30px;
+			padding: 20px;
 			background-color: #000000;
-			animation: breathe 6s linear infinite alternate;
+			animation: breath 4s linear infinite alternate;
+		}
+		div#center{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 60px;
+			height: 60px;
+			margin-top: -30px;
+			margin-left: -30px;
+			background-color: #80E8F3;
+			border-radius: 50%;
+			filter: blur(1px);
 		}
 		div#outer{
 			box-sizing: border-box;
 			height: 100%;
-			border: 5px solid #ffffff;
+			border: 4px solid #ffffff;
 			border-radius: 50%;
-			padding: 40px;
-			animation: breath 6s linear infinite alternate;
+			padding: 20px;
+			animation: breathe 4s linear infinite alternate;
 		}
 		div#inner{
 			height: 100%;
 			border-radius: 50%;
 			border: 3px solid #ffffff;
+			padding: 20px;
+			animation: breathee 4s linear infinite alternate;
 		}
-		@keyframes breath{
+		div#inner1{
+			height: 100%;
+			border-radius: 50%;
+			border: 2px solid #ffffff;
+			padding: 20px;
+			animation: breatheee 4s linear infinite alternate;
+		}
+		div#inner2{
+			height: 100%;
+			border-radius: 50%;
+			border: 1px solid #ffffff;
+		}
+ 		@keyframes breath{
 			0% {
-				padding: 40px;
+				padding: 20px;
 			}
-			50% { 
+			25% { 
 				padding: 20px;
 			 }
-			100% {
-			 	padding: 50px;
-			 	/*注意此处padding为20+30以保持inner不变*/
+			 50% {
+				padding: 20px;
 			 }
+			 75% {
+			 	padding: 20px;
+			 }
+			 100%{
+				padding: 10px;
+			 }
+			 
 		}
 		@keyframes breathe{
 			0% {
-				padding: 30px;
+				padding: 20px;
+			}
+			25% {
+				padding: 20px;
 			}
 			50% {
-				padding: 30px;
-				/*每次动画间隔3秒*/
+				padding: 20px;
 			}
-			100% {
-				padding: 0;
+			75% {
+				padding: 10px;
+			}
+			100%{
+				padding: 20px;
+			}
+		} 
+		@keyframes breathee{
+			0% {
+				padding: 20px;
+			}
+			25% {
+				padding: 20px;
+			}
+			50% {
+				padding: 10px;
+			}
+			75% {
+				padding: 20px;
+			}
+			100%{
+				padding: 20px;
+			}
+		}
+		@keyframes breatheee{
+			0%{
+				padding: 20px;
+			}
+			25%{
+				padding: 10px;
+			}
+			50%{
+				padding: 20px;
+			}
+			75%{
+				padding: 20px;
+			}
+			100%{
+				padding: 20px;
 			}
 		}
 		}
 	</style>
 </head>
 <body>
-<div id="main">
-	<div id="outer">
-		<div id="inner"></div>
+	<div id="main">
+		<div id="outer">
+			<div id="inner">
+				<div id="inner1">
+					<div id="inner2">
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>
+	<div id="center"></div>
 </body>
 </html>
