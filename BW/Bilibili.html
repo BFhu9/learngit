@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Bilibili</title>
+	<title>哔哩哔哩 (゜-゜)つロ 干杯~-bilibili</title>
 	<meta charset="utf-8">
+	<link rel="shortcut icon " type="images/x-icon" href="img/title.png">
 	<link rel="stylesheet" type="text/css" href="bilibili.css">
 	<link rel="stylesheet" href="bilibilifont/B_fill/iconfont.css">
 	<link rel="stylesheet" href="bilibilifont/S_log/iconfont.css">
@@ -11,11 +12,30 @@
 	<link rel="stylesheet" href="bilibilifont/sort/iconfont.css">	
 	<link rel="stylesheet" href="bilibilifont/L_I/iconfont.css">
 	<link rel="stylesheet" href="bilibilifont/R_I/iconfont.css">
+	<link rel="stylesheet" type="text/css" href="bilibilifont/up/iconfont.css">
 	<script src="bilibilifont/R_I/iconfont.js"></script>
+	<script src="bilibilifont/l-con/iconfont.js"></script>
+	<script src="bilibilifont/fire/iconfont.js"></script>
 	<style>
 	.icon {
 	  width: 25px;
 	  height: 25px;
+	  vertical-align: -0.15em;
+	  fill: currentColor;
+	  overflow: hidden;
+	  margin-right: 3px;
+	}
+	.l-icon {
+	  width: 36px;
+	  height: 36px;
+	  vertical-align: -0.15em;
+	  fill: currentColor;
+	  overflow: hidden;
+	  margin-right: 6px;
+	}
+	.fire-icon {
+	  width: 16px;
+	  height: 16px;
 	  vertical-align: -0.15em;
 	  fill: currentColor;
 	  overflow: hidden;
@@ -207,7 +227,7 @@
 			</div>
 		</div>
 		<div id="content1">
-			<div class="lunbo"><img src="img/lunbo1.jpeg" alt="lunbo"><p class="c1p" style="display: flex;
+			<div class="lunbo"><img src="img/lunbo.jpeg" alt="lunbo"><p class="c1p" style="display: flex;
 	align-items: center;">投稿灵笼二创活动，丰厚奖励等你赢取</p></div>
 			<div class="c1"><img src="img/c1.jpg" alt="c1"><p class="c1p">他有一张非常恐怖的卡【水无月菌】</p></div>
 			<div class="c1"><img src="img/c2.jpg" alt="c2"><p class="c1p">【C菌】世界上最幸福的专业,学校给你买游戏，瞬间爱上学</p></div>
@@ -217,11 +237,54 @@
 			<div class="c1"><img src="img/c6.jpg" alt="c6"><p class="c1p">英雄联盟《绽灵节》伪全员手书 &「花に亡靈」莉莉娅/锐雯/亚索/永恩/阿狸等出场</p></div>
 		</div>
 		<div id="content2">
-			<div id="c2_left"></div>
-			<div id="c2_right"></div>
+			<div id="c2_left">
+				<div id="cl_head">
+					<div class="l-con">
+						<svg class="l-icon" aria-hidden="true">
+ 							 <use xlink:href="#icon-tuiguang"></use>
+						</svg>
+						<span>推广</span>
+						<div class="text-info">
+						<svg class="fire-icon" aria-hidden="true">
+ 							 <use xlink:href="#icon-huo"></use>
+						</svg><span>鬼畜区的狂欢庆典！</span>
+						<svg class="fire-icon" aria-hidden="true">
+ 							 <use xlink:href="#icon-huo"></use>
+						</svg><span>糟糕，是心动的感觉！</span>
+						</div>
+					</div>
+				</div>
+				<div id="cl_content">
+					<div class="content">
+						<img src="img/con1.jpg" alt="image">
+						<p class="con_text"><span class="gg-icon">广告</span>沧海拾遗！来博物馆拯救世界吧！</p><div class="upzhu"><span class="iconfont icon-upzhux"></span>拾遗计划委员会</div>
+					</div>
+					<div class="content">
+						<img src="img/con2.jpg" alt="image">
+						<p class="con_text">小丑赘婿</p><div class="upzhu"><span class="iconfont icon-upzhux"></span>拾桃</div>
+					</div>
+					<div class="content">
+						<img src="img/con3.jpg" alt="imag4">
+						<p class="con_text">回家的仙若！【3000集连续剧】</p><div class="upzhu"><span class="iconfont icon-upzhux"></span>BilibiliWorld园长</div>
+					</div>
+					<div class="content">
+						<img src="img/con4.jpg" alt="image">
+						<p class="con_text">一学就会！说唱歌手教你如何作词</p><div class="upzhu"><span class="iconfont icon-upzhux"></span>法老爷爷</div>
+					</div>
+				</div>
+			</div>
+			<div id="c2_right">
+				<div id="cr">
+					<span style="line-height: 30px">在线列表<span>
+				</div>
+				<div id="cri">
+				<img src="img/cr.jpg" alt="cr">
+				</div>
+			</div>
 		</div>
-		<div class="guanggao">
+		<div class="guanggao" style="position:relative">
 			<img src="img/guanggao.jpg" alt="广告">
+			<span class="gg-icon" style="position: absolute;left: 5px;top:94.15px">广告</span>
 		</div>
 		<div id="RI" style="margin-top: -700px">
 			<section id="right_index">
