@@ -3,6 +3,10 @@
 	padding: 0;
 	font-family: Helvetica Neue;	
 	box-sizing: border-box;
+	text-align: center;
+}
+p,img,span{
+	cursor: pointer;
 }
 header{
 	height: 155px;
@@ -29,6 +33,31 @@ footer{
 	float: left;
 	display: inline-block;
 }
+#BW{
+	width: 54px;
+	height: 36px;
+	position: absolute;
+	top: 7px;
+	left: 365px;
+	animation: BW 1s infinite ;
+}
+@keyframes BW{
+	0% {
+		margin-top: 0px;
+	}
+	50% {
+		margin-top: -20px;
+		opacity: 0;
+	}
+	75%{
+		margin-top: 20px;
+		opacity: 0;
+	}
+	100%{
+		margin-top: 0;
+		opacity: 1;
+	}
+}
 #index_1 div span{
 	line-height: 30px;
 	float: left;
@@ -45,6 +74,9 @@ footer{
 	margin: 0 auto;
 	padding: 20px 0;
 	justify-content: space-between;
+}
+div#l_ist span:hover{
+	color: #73c9e5;
 }
 #index_1{
 	width: 498px;
@@ -238,4 +270,82 @@ div#R_I {
 	width: 220px;
 	flex-wrap: wrap;
 	height: 68px;
+}
+div.ri_content{
+	display: flex;
+	align-items: center;
+	height: 34px;
+	color: #505050;
+	font-size: 14px;
+}
+div#content1{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin: 0 auto;
+	height: 242px;
+	width: 1198px;
+	margin-bottom: 40px;
+}
+div.lunbo{
+	position: relative;
+	width: 550px;
+	height: 242px;
+}
+div.lunbo img{
+	width: 550px;
+	height: 242px;
+	border-radius: 2px;
+}
+div.c1{
+	position: relative;
+	width: 206px;
+	height: 116px;
+	transition: white-space: 2s;
+}
+div.c1 img{
+	width: 206px;
+	height: 116px;
+	border-radius: 2px;
+	transition: margin 0.5s;
+}
+p.c1p{
+	position: absolute;
+	bottom: 5px;
+	left: 6px;
+	width: 96%;
+	color: #fff;
+	white-space: nowrap;
+	font-size: 14px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	background-color: rgba(0, 0, 0, 0.4)	
+}
+div.c1:hover p.c1p{
+	white-space: normal;
+}
+div.c1:hover img{
+	margin: -3px;
+}
+div#content2{
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	margin-bottom: 40px;
+	width: 1198px;
+	height: 244px;
+	background-color: pink;
+}
+div#c2_left{
+	display: flex;
+	width: 854px;
+	height: 244px;
+	background-color: yellow;
+}
+div#c2_right{
+	display: flex;
+	width: 320px;
+	height: 244px;
+	background-color: skyblue;
 }

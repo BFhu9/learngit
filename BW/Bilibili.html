@@ -10,6 +10,18 @@
 	<link rel="stylesheet" href="bilibilifont/R_index/iconfont.css">
 	<link rel="stylesheet" href="bilibilifont/sort/iconfont.css">	
 	<link rel="stylesheet" href="bilibilifont/L_I/iconfont.css">
+	<link rel="stylesheet" href="bilibilifont/R_I/iconfont.css">
+	<script src="bilibilifont/R_I/iconfont.js"></script>
+	<style>
+	.icon {
+	  width: 25px;
+	  height: 25px;
+	  vertical-align: -0.15em;
+	  fill: currentColor;
+	  overflow: hidden;
+	  margin-right: 3px;
+	}
+	</style>
 </head>
 <body>
 	<header>
@@ -17,10 +29,10 @@
 			<div id="index_1">
 				<div><span class="iconfont icon-bilibili-fill" style="float: left;margin-right: 6px"></span><span>主站</span></div>
 				<div><span>番剧</span><span>游戏中心</span><span>直播</span><span>会员购</span><span>漫画</span><span>赛事</span></div>
-				<div style="width: 54px;height: 36px;position: relative;top: -3px"><img src="img/BW.png" alt="BW" width="54px" height="36px"></div>
+				<div><img src="img/BW.png" alt="BW" width="54px" height="36px" id="BW"><span style="margin: 0 30px;">BW</span></div>
 				<div style="width: 84px;height: 30px"><span class="iconfont icon-Phone" style="width: 18px;height: 30px;float: left;margin-right: 2px;font-size: 21px"></span><span style="float: right;">下载APP</span></div>
 			</div>
-			<div id="Sub">投稿</div>
+			<div id="Sub" style="cursor: pointer">投稿</div>
 			<div id="Login_Re">
 				<div>
 					<span>注册</span>
@@ -29,13 +41,12 @@
 					<div id="log">
 					<img src="img/login.jpg" alt="Login">
 					</div>
-					<div id="login">
-					登录
+					<div id="login">登录
 					</div>
 				</div>
 			</div>
 			<div id="Search">
-				<input type="text" name="Search" placeholder="B站播放量前十的视频，你能猜对几个？">
+				<input type="text" name="Search" placeholder="B站播放量前十的视频，你能猜对几个？" style="text-align: left">
 				<div id="S_log"><span class="iconfont icon-search" style="font-size: 18px;"></span></div>
 			</div>
 	</div>
@@ -46,19 +57,19 @@
 				<div id="L_I">
 					<ul class="tab_L">
 						<li>
-							<div class="round" style="background-color: #ff5c7c"><span class="iconfont icon-home"></span></div>
+							<div class="round" style="background-color: #ff5c7c"><span class="iconfont icon-home" style="color: #fff !important"></span></div>
 							<span>首页</span>
 						</li>
 						<li>
-							<div class="round" style="background-color: #fcba2a"><span class="iconfont icon-dongtaikong-"></span></div>
+							<div class="round" style="background-color: #fcba2a"><span class="iconfont icon-dongtaikong-" style="color: #fff !important"></span></div>
 							<span>动态</span>
 						</li>
 						<li>
-							<div class="round" style=" background-color: #00a1d6"><span class="iconfont icon-paihangbang"></span></div>
+							<div class="round" style=" background-color: #00a1d6"><span class="iconfont icon-paihangbang" style="color: #fff !important"></span></div>
 							<span>排行榜</span>
 						</li>
 						<li>
-							<div class="round" style="background-color: #6dc781"><span class="iconfont icon-pindao"></span></div>
+							<div class="round" style="background-color: #6dc781"><span class="iconfont icon-pindao" style="color: #fff !important"></span></div>
 							<span>频道</span>
 						</li>
 					</ul>
@@ -168,12 +179,50 @@
 			</div>
 			<span class="tab_line"></span>
 			<div id="R_I">
-				
+				<div class="ri_content">
+					<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-zhuanlan"></use>
+					</svg>
+					<span>专栏</span></div>
+				<div class="ri_content">
+					<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-zhibo"></use>
+					</svg><span>直播</span></div>
+				<div class="ri_content">
+					<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-manhua"></use>
+					</svg><span>漫画</span></div>
+				<div class="ri_content">
+					<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-fanju"></use>
+					</svg><span>番剧</span></div>
+				<div class="ri_content" style="position: relative;left: -11px;">
+					<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-xiaoheiwu"></use>
+					</svg><span>小黑屋</span></div>
+				<div class="ri_content">
+					<svg class="icon" aria-hidden="true">
+					<use xlink:href="#icon-music"></use>
+					</svg><span>音乐PLUS</span></div>
 			</div>
+		</div>
+		<div id="content1">
+			<div class="lunbo"><img src="img/lunbo1.jpeg" alt="lunbo"><p class="c1p" style="display: flex;
+	align-items: center;">投稿灵笼二创活动，丰厚奖励等你赢取</p></div>
+			<div class="c1"><img src="img/c1.jpg" alt="c1"><p class="c1p">他有一张非常恐怖的卡【水无月菌】</p></div>
+			<div class="c1"><img src="img/c2.jpg" alt="c2"><p class="c1p">【C菌】世界上最幸福的专业,学校给你买游戏，瞬间爱上学</p></div>
+			<div class="c1"><img src="img/c3.jpg" alt="c3"><p class="c1p">这桥修的...过分了！</p></div>
+			<div class="c1"><img src="img/c4.png" alt="c4"><p class="c1p">请活着看到最后/明日方舟/手书</p></div>
+			<div class="c1"><img src="img/c5.jpg" alt="c5"><p class="c1p">《老炮儿联盟》：LPL的遗失大陆，没去过敢说自己是真粉？</p></div>
+			<div class="c1"><img src="img/c6.jpg" alt="c6"><p class="c1p">英雄联盟《绽灵节》伪全员手书 &「花に亡靈」莉莉娅/锐雯/亚索/永恩/阿狸等出场</p></div>
+		</div>
+		<div id="content2">
+			<div id="c2_left"></div>
+			<div id="c2_right"></div>
 		</div>
 		<div id="RI">
 			<section id="right_index">
-					<div><span class="iconfont icon-icon_youdaohang_xiaodianshitianxian" style="display:inline-block;width: 27px;height: 14px;color: #505050;position: relative;top: 7px;left: 10px;font-size: 8px"></span></div>
+					<div><span class="iconfont icon-icon_youdaohang_xiaodianshitianxian" style="display:inline-block;width: 27px;height: 14px;color: #505050;position: relative;top: 7px;left: -5px;font-size: 8px"></span></div>
 					<div id="option">
 						<div><span>直播</span></div>
 						<div><span>动画</span></div>
