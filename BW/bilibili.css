@@ -339,7 +339,8 @@ div.c1:hover p.c1p{
 	height: 100%;
 	margin-top: -3px;
 	display: flex;
-	align-items: center;	
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.5);	
 }
 div.c1:hover img{
 	margin-top: -3px;
