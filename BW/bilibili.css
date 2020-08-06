@@ -10,7 +10,7 @@ p,img,span{
 }
 header{
 	height: 155px;
-	background-image: url('img/head.png');
+	background: url('img/head.png') no-repeat -120px 0;
 	background-size: cover;
 	background-repeat: no-repeat;
 	font-size: 14px;
@@ -134,7 +134,7 @@ div#l_ist span:hover{
 }
 #logo1 {
 	position: absolute;
-	top: 63px;
+	top: 70px;
 	left: 121px;
 	width: 162px;
 	height: 77px;
@@ -302,7 +302,7 @@ div.c1{
 	position: relative;
 	width: 206px;
 	height: 116px;
-	transition: white-space: 2s;
+	transition: white-space: 0.5s;
 }
 div.c1 img{
 	width: 206px;
@@ -312,6 +312,8 @@ div.c1 img{
 }
 p.c1p{
 	position: absolute;
+	display: flex;
+	align-items: center;
 	bottom: 5px;
 	left: 6px;
 	width: 96%;
@@ -320,13 +322,17 @@ p.c1p{
 	font-size: 14px;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+div.c1 p.c1p{	
 	background-color: rgba(0, 0, 0, 0.4)	
 }
 div.c1:hover p.c1p{
 	white-space: normal;
+	height: 100%;
+	margin-top: -3px;
 }
 div.c1:hover img{
-	margin: -3px;
+	margin-top: -3px;
 }
 div#content2{
 	display: flex;
