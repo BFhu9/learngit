@@ -38,7 +38,7 @@ footer{
 	height: 36px;
 	position: absolute;
 	top: 7px;
-	left: 365px;
+	left: 350px;
 	animation: BW 2s infinite ;
 }
 @keyframes BW{
