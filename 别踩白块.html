@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: beige;
+		}
+		div#outer{
+			height: 300px;
+			width: 300px;
+			border: 2px solid;
+			overflow: hidden;
+		}
+		div#f_ooter{
+			width: 300px;
+			height: 100px;
+			margin-top: 15px;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		table{
+			width: 300px;
+			height: 400px;
+			border: 1px solid;
+			text-align: center;
+			border-spacing: 0;
+			border-collapse:collapse；
+		}
+		tr{
+			left: 50%;
+			margin-left: -151px;
+			border-width: 0 1px;
+			border-style: solid;
+			height: 100px;
+			display:inline-block;
+			margin-top: -100px;
+			animation: move 3s linear infinite;
+			position: absolute;
+		}
+		td{
+			width: 100px;
+			height: 100px;
+			border: 2px solid beige;
+		}
+		@keyframes move{
+			from {
+				margin-top: 0px;
+			}
+			to{
+				margin-top: 300px;
+			}
+		}
+		button{
+			height: 30px;
+			width: 80px;
+		}
+	</style>
+	<script type="text/javascript">
+	var sc = 0;
+	window.onload=function (){
+		var r = document.getElementsByClassName("row");
+			for(i=0;i<r.length;i++){
+				var b = r[i].childNodes;
+				for(x=0;x<b.length;x++){
+	            if(b[x].nodeName == "#text"&& !/\s/.test(b.nodeValue)){
+	                r[i].removeChild(b[x]);
+	            	}
+				}
+		}
+	}
+	function Run(){
+		var bd = document.getElementById("bd");
+		var st=setInterval(function Cr(){
+		var r1 = document.createElement("tr");
+		r1.classList.add("row");
+		for(n=1;n<=3;n++){
+		var d1 = document.createElement("td");
+		d1.setAttribute("onclick","O_R(this)");
+		var Q = Math.random()*10;
+		if(Q>5){
+		d1.style.backgroundColor="#000";
+		}
+		bd.appendChild(r1);
+		r1.appendChild(d1);
+		}
+		},1000);
+		var ed = setTimeout(function Rm(){
+			window.setInterval(function Rm1(){
+			var nds = new Array;
+			nds = bd.firstChild.childNodes;
+			for(z = 0;z<nds.length;z++){
+						if(
+				nds[z].style.backgroundColor=="rgb(0, 0, 0)"
+			){
+			clearInterval(st);
+			clearTimeout(ed);
+			alert("游戏结束!你的得分为"+sc);
+				}
+			}
+				bd.removeChild(bd.firstChild);
+			},1000)
+		},2000);
+	}
+	function Up(){
+
+	}
+	function Down(){
+
+	}
+	function O_R(P){
+		if(P.style.backgroundColor=="rgb(0, 0, 0)"){
+			P.style.backgroundColor="beige";
+			sc = sc + 1;
+			document.getElementById("sc").innerText="Score:"+sc;
+		}
+	}
+	</script>
+</head>
+<body>
+	<h2 style="margin-bottom: 10px" id="sc">Score:0</h2>
+			<table>
+				<tbody id="bd">
+				</tbody>
+			</table>
+	<div id="f_ooter">
+	<button onclick="Up()">加速</button>
+	<button onclick="Run()">开始</button>
+	<button onclick="Down()">减速</button>
+	</div>
+</body>
+</html>
