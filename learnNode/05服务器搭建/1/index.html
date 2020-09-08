@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>111</title>
+	<script type="text/javascript">
+		fetch('/api/userList').then((res)=>{
+			return res.json();
+		}).then((res)=>{
+			console.log(res);
+			res.userList.forEach((item,i)=>{
+				let newDiv = document.createElement('div');
+				newDiv.innerHTML = `姓名${item.name} 年龄${item.age}`;
+				document.body.appendChild(newDiv);
+			})
+		})
+	</script>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h1>This is First Server</h1>
+</body>
+</html>

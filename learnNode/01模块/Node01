@@ -1,0 +1,24 @@
+1.Node是一个封装了Google V8引擎的JavaScript的运行环境
+2.Node.js使用事件驱动，非阻塞I/O模型得以轻量化 
+3.npm改变为淘宝镜像(不加sudo会产生权限问题)/安装cnpm
+4.使用npm下载模块及依赖(分为本地安装和全局安装 -g)
+5.模块的导入使用require()方法 <=类似导包
+6.模块路径解析规则
+  ①内置模块：直接传入模块名称，则不做路径解析，直接返回内置模块导出对象
+  ②Node定义了一个特殊的node_modules目录用于存放模块(如本级没有该模块则去上级目录搜索node——mudules，一直提升到根目录)
+  ③Node可以通过NODE_PATH环境变量来指定而外搜索路径
+	NODE_PATH=/home/user/lib:/home/lib
+   当使用require("foo/bar")方式加载模块时将依次尝试以下路径：
+	/home/user/lib/foo/bar
+	/home/lib/foo/bar
+7.自己打包文件时文件中一定要有node_modules文件夹！
+
+
+
+
+
+
+
+解疑：
+1.更改缓存路径
+2.express模块作用

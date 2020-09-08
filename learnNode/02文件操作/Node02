@@ -1,0 +1,33 @@
+1.同步写入方法
+	打开文件：let fd = fs.openSync("文件名","权限符")			-------fd接收的返回值为Number值，记录是打开文件的唯一标识
+	写入文件：fs.writeFileSync(fd,str)
+	关闭文件：fs.closeSync(fd)
+2.异步写入方法
+	打开文件：fs.open("文件名","权限符",回调函数(err,fd)=>{						-------err为报错信息，fd同上
+	写入文件：  		fs.writeFile(fd,str,回调函数(err)=>{			
+							if(!err){												--------写入不报错
+	关闭文件：    			fs.close(fd,回调函数()=>{})
+							}
+							else{  
+									console.log(err)				--------输出报错信息
+							}
+		})
+	})
+3.pipe()函数对接读取流和写入流
+4.异步操作嵌套中最好嵌套同步操作（或使用ES6定时器）
+5.fs模块自带statSync()函数用于判断文件状态，isFile()函数用于判断对象是否为文件
+6.Node事件
+	①引入events模块，实例化EventEmitter类来绑定与监听事件
+	②eventEmitter.on('事件名',handle{}) 					-------监听事件
+	③eventEmitter.emit('事件名',[参数]) 					-------触发事件
+
+ 
+
+
+
+
+
+
+
+存疑：
+1.fs模块作用
