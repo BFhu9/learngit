@@ -1,0 +1,22 @@
+1.创建及配置thinkjs项目
+	1.使用npm -g thinkjs-cli安装
+	2.在目标文件夹下使用thinkjs new 项目名 创建thinkjs项目
+	3.在新建项目下使用cnpm install安装配置文件
+	4.使用npm start运行项目
+2.项目组件
+首页：view ---> index_index.html
+请求顺序：logic --->index.js（用于校验请求数据）
+				controller --->index.js（用于处理响应数据）
+3.上下文对象 ---> this.ctx  
+4.页面展现 --->this.display() --->默认找view下文件夹名对应的AAA_BBB.html(AAA为js文件名，BBB为BBBAction方法名的前缀)
+												参数指定渲染页面
+5.获取数据 --->this.assign()存放，{{属性名}}获取
+6.连接数据库 --->在config文件夹下adapter.js中配置①database为数据库名称②prefix为表前缀③port默认为3306
+		(1)使用orm映射（object relation model）
+				调用model()下的table('表面').select()方法获取表中数据（返回值为数组）--->更多方法见数组
+				为异步操作：this.model().table().select()前面需要await关键字&&XXXAction(){}前需要加async关键字
+7.创建模型
+	(1)在model文件夹中创建js文件（文件名为模型名称）
+	(2)js文件继承think.model ---> module.exports = class extends think.Model 
+			模型内部定义的方法可直接this调用model()中的方法 ---> 如this.table()
+	(3)调用时使用this.model('模型名').方法名();
