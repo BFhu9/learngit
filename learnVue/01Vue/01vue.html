@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>01Vue</title>
+	<style type="text/css">
+		body{
+			background-color: beige;
+		}
+		button{
+			width: 90px;
+			height: 30px;
+		}
+	</style>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<!-- 
+	视图层
+ -->
+<body>
+	<!--测试vue绑定事件及v-if-->
+	<div id="_01vue">
+		<!-- 基本渲染    差值 -->
+		<h1>{{helloWorld}}</h1>
+		<h2 v-if="ifTest">测试v-if</h2>
+		<h3 v-else>测试v-else</h3>
+		<hr>
+		<h1 v-if="idx>20">vue真TND简单</h1>
+		<h1 v-else-if="idx<10">vue太TM方便了</h1>
+		<h1 v-else>WC vue真香</h1>
+	</div>
+	<hr>
+	<!-- 测试v-show及其与v-if的区别 -->
+	<div id="_02vue">
+		<h3>{{ Date }}</h3>
+		<button @click="running">计时开始</button>
+		<h1 v-show="isShow">出来吧隐藏的Vue！</h1>
+		<button @click="changed">反转吧！</button>
+	</div>
+	<hr>
+	<!-- 测试循环渲染 -->
+	<div id = "_03vue">
+		<ul>
+			<li v-for="(item,i) in msg"><h3>{{i+1}}-{{item}}</h3></li>
+		</ul>	
+		<ul>
+			<li v-for='(item,i) in stu'><h3>{{i+1}}-{{item.name}}-{{item.des}}</h3></li>
+		</ul>
+		<!-- 添加组件 -->
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+		<button-counter></button-counter>
+	</div>
+<!-- 
+	数据逻辑层
+ -->
+	<script type="text/javascript">
+		let _01vue = new Vue({
+			el : "#_01vue",
+			data: {
+				helloWorld : "Today,World is Vue",
+				ifTest : true,
+				idx : 10
+			}
+		})
+		let _02vue = new Vue({
+			el : "#_02vue",
+			data: {
+				isShow : true,
+				Date: new Date()
+			},
+			methods : {
+				changed : function(){
+					// if (this.isShow) {
+					// 	this.isShow=false;
+					// }
+					// else{
+					// 	this.isShow=true;
+					// }
+					this.isShow=!(this.isShow)
+				},
+				running:function()
+				{
+					setInterval(()=>{this.Date=new Date();},1000)}
+			}
+		})
+		// 定义组件
+		let button_counter = Vue.component('button-counter',{
+			template:"<div><h1>{{num}}</h1><br/><button @click='addNum'>+++</button></div>",
+			data:function () {
+				return {
+					num:0
+				}
+			},
+			methods : {
+				addNum:function (){
+					this.num ++;
+				}
+			}
+		})
+		let _03vue  = new Vue({
+			el : "#_03vue",
+			data: {
+				msg:['Node','thinkJS','Vue'],
+				stu:[{name:'111',des:'111'},{name:'222',des:'222'},{name:'333',des:'333'}]
+			},
+			components : {
+				button_counter
+			}
+		})
+	</script>
+</body>
+</html>

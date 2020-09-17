@@ -1,0 +1,264 @@
+<style>
+  .categoryManage .option-div {
+    height: 35px;
+  }
+
+  .dialog {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 18px;
+  }
+
+  .dialog-content {
+    margin: 100px auto;
+    width: 50%;
+    /* height: 400px; */
+    background-color: white;
+    border-radius: 10px;
+    /* padding: 10px 20px; */
+    padding-bottom: 10px;
+  }
+
+  .dialog-header {
+    /* line-height: 30px; */
+    overflow: hidden;
+    background-color: #2cb5ac;
+    padding: 10px 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .dialog-header .dialog-title {
+    float: left;
+  }
+
+  .dialog-header .dialog-cancel {
+    float: right;
+  }
+
+  .dialog-body {
+    line-height: 40px;
+  }
+
+  .dialog-body .form-item {
+    margin-bottom: 10px;
+  }
+
+  .dialog-body label {
+    width: 80px;
+    text-align: right;
+    margin-right: 10px;
+    display: inline-block;
+  }
+
+  .dialog-body input,
+  .dialog-body select,
+  .dialog-body textarea {
+    width: calc(100% - 150px);
+    font-size: 18px;
+  }
+
+  .dialog-body input,
+  .dialog-body select {
+    height: 30px;
+  }
+
+  .dialog-footer {
+    text-align: right;
+    /* margin-bottom: 10px; */
+    padding-right: 10px;
+  }
+</style>
+<div class="categoryManage">
+  <div class="option-div">
+    <button id="toAdd" class="btn btn-success">新增</button>
+  </div>
+  <div class="table-div">
+    <table class="table striped">
+      <thead>
+        <tr>
+          <th>序号</th>
+          <th>名称</th>
+          <th>排序号</th>
+          <th>父栏目</th>
+          <th>描述</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </div>
+  <!-- 模态框 -->
+  <div class="dialog">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <div class="dialog-title">
+          新增栏目信息
+        </div>
+        <div class="dialog-cancel"><i class="fa fa-times"></i></div>
+      </div>
+      <div class="dialog-body">
+        <div class="form-item">
+          <label for="">栏目名称</label>
+          <input type="text" name="name">
+        </div>
+        <div class="form-item">
+          <label for="">父栏目</label>
+          <select name="parentId" id="">
+            <!-- 遍历生成 -->
+            <option value="">请选择</option>
+          </select>
+        </div>
+        <div class="form-item">
+          <label for="">序号</label>
+          <input type="text" name="no">
+        </div>
+        <div class="form-item">
+          <label for="">栏目介绍</label>
+          <textarea name="description" id="" cols="30" rows="4"></textarea>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button class="btn btn-error">取消</button>
+        <button class="btn btn-success">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  // 数据模型
+  var categoryDataModel = {
+    // 所有类别数据
+    categoryData: [],
+    // 当前修改的对象
+    currentCategory: {},
+    // 模态框的标题
+    dialogTitle: '新增分类信息',
+  };
+  // 确定按钮保存或更新
+  $('.dialog-footer button:last').click(() => {
+    // 获取表单控件数据，进行保存操作
+    let params = {
+      id: categoryDataModel.currentCategory.id,
+      name: $('[name=name]').val(),
+      description: $('[name=description]').val(),
+      no: $('[name=no]').val(),
+      parentId: $('[name=parentId]').val()
+    };
+    // console.log(params, '--数据');
+    myAjax.postForm(api.CATEGORY_SAVEORUPDATE, params).then((res) => {
+      // console.log(res);
+      // 局部刷新数据，关闭模态框
+      findAll();
+      $('.dialog').fadeOut();
+    }).catch((err) => {
+      // err在请求成功后台操作失败的时候是res。err在请求失败是err
+      alert(err.message || '保存错误');
+    })
+  })
+  //新增
+  $('#toAdd').click(() => {
+    //标题  内容  option 显示模态框
+    // 设置currentCategory清空
+    categoryDataModel.currentCategory = {};
+    categoryDataModel.dialogTitle = '新增分类信息';
+    changeDialogTitle();
+  });
+  // 模态框关闭
+  $('.dialog-footer button:first').click(() => {
+    $('.fa-times').trigger('click');
+  });
+  $('.fa-times').click(() => {
+    $('.dialog').fadeOut();
+  });
+
+  // 封装 处理模态框的标题，追加option，设置表单控件内容，显示模态框
+  function changeDialogTitle() {
+    $('.dialog-title').text(categoryDataModel.dialogTitle);
+    $('[name=parentId]').empty();
+    $('[name=parentId]').append($(` <option value="">请选择</option>`));  //开单引号
+    // 过滤一级栏目作为父栏目
+    let result = categoryDataModel.categoryData.filter(item => !item.parentId);
+    result.forEach(item => {
+      $('[name=parentId]').append($(`<option value="${item.id}">${item.name}</option>`));
+    });
+    $('[name=name]').val(categoryDataModel.currentCategory.name);
+    $('[name=parentId]').val(categoryDataModel.currentCategory.parentId);
+    $('[name=no]').val(categoryDataModel.currentCategory.no);
+    $('[name=description]').val(categoryDataModel.currentCategory.description);
+    // 显示模态框
+    $('.dialog').fadeIn();
+  }
+  // 获取全部类别信息
+  findAll();
+  function findAll() {
+    myAjax.get(api.CATEGORY_FINDALL, null).then((res) => {
+      // console.log(res);
+      // 清空节点
+      $('.categoryManage tbody').empty();
+      // 将数据设置到数据模型中
+      categoryDataModel.categoryData = res.data;
+      let arr = res.data || [];
+      if (arr.length > 0) {
+        arr.forEach((item, index) => {
+          $('.categoryManage tbody').append($(`
+        <tr>
+          <td>${index + 1}</td>
+          <td>${item.name}</td>
+          <td>${item.no}</td>
+          <td>${item.parentId || '--'}</td>
+          <td>${item.description || '--'}</td>
+          <td>
+            <i data-item='${JSON.stringify(item)}' class="fa fa-edit" title="编辑"></i>
+            <i data-id="${item.id}" class="fa fa-trash-o" title="删除"></i>
+          </td>
+        </tr>
+        `));
+        })
+      }
+    })
+  }
+  //编辑
+  $('.categoryManage tbody').on('click', '.fa-edit', (e) => {
+    let category = $(e.target).attr('data-item');
+    // 存到数据模型中，点击修改模态框的确定的时候，需要id
+    categoryDataModel.currentCategory = JSON.parse(category);
+    categoryDataModel.dialogTitle = '修改分类信息';
+    changeDialogTitle();
+  });
+  // 删除
+  $('.categoryManage tbody').on('click', '.fa-trash-o', (e) => {
+    let id = $(e.target).attr('data-id');
+    // id代表的是要删除的数据id
+    if (confirm('是否确认删除?')) {
+      myAjax.get(api.CATEGORY_DELETEBYID, { id }).then((res) => {
+        alert('删除成功');
+        findAll();
+      }).catch((err) => {
+        alert(err.message || "删除失败");
+      })
+    }
+  });
+
+  $('#toAdd').mousedown(() => {
+    $('#toAdd').css({
+      "margin-left": "2px",
+      "margin-top": "2px"
+    });
+  })
+  $('#toAdd').mouseup(() => {
+    $('#toAdd').css({
+      "margin-left": "0px",
+      "margin-top": "0px"
+    });
+  })
+</script>
