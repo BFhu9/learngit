@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Filter</title>
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<div id="app">
+		<div v-for='(item,index) in arr' :key='index'>
+			<span>{{ item.name | parseUpper}}</span>
+			<span>{{ item.time | parseTime }}</span>
+		</div>
+	</div>
+	<div id="hook-arguments-example" v-demo:foo.a.b="message"></div>
+<script type="text/javascript">
+	// 全局注册过滤器
+	Vue.filter('parseTime',(date)=>{
+		return new Date(date).toLocaleString()
+	})
+	new Vue({
+	el:'#app',
+	//局部注册过滤器
+	filters:{
+		parseUpper(date){
+			return date.toUpperCase();
+		}
+	},
+	data : {
+	arr : [{
+		name:'aaa',
+		time:1600676292941
+	},{
+		name:'bbb',
+		time:1600676292999
+	},{
+		name:'aaa',
+		time:2800676292941
+	}]}
+	// 	let parse = (time) =>{
+	// 	let date = new Date(time);
+	// 	return date.toLocaleDateString() + ' ' + date.toLocaleTimeString();
+	// }
+	// arr.forEach((item)=>{
+	// 	item.time = parse(item.item);
+	// })
+	// console.log(arr)
+	})
+	Vue.directive('demo', {
+ 	 bind: function (el, binding, vnode) {
+    var s = JSON.stringify
+    el.innerHTML =
+      'name: '       + s(binding.name) + '<br>' +
+      'value: '      + s(binding.value) + '<br>' +
+      'expression: ' + s(binding.expression) + '<br>' +
+      'argument: '   + s(binding.arg) + '<br>' +
+      'modifiers: '  + s(binding.modifiers) + '<br>' +
+      'vnode keys: ' + Object.keys(vnode).join(', ')
+  }
+})
+
+new Vue({
+  el: '#hook-arguments-example',
+  data: {
+    message: 'hello!'
+  }
+})
+</script>
+</body>
+</html>

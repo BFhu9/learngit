@@ -32,8 +32,9 @@ export default new Vuex.Store({
   actions: {
     // 参数context为$store
     getJoke(context){
-    let url='http://api.apiopen.top/getJoke?page=1&count=10&type=text';
+    let url='/api';
     fetch(url).then((res)=>{
+      console.log(res)
       res.json();
     }).then((res)=>{
       console.log(res);

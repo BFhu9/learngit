@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>事件修饰符</title>
+	<meta charset="utf-8">
+	<script src="../vue.js"></script>
+	<style type="text/css">
+		div.outer{
+			height: 200px;
+			width: 200px;
+			background-color: coral;
+		}
+		div.inner{
+			height: 100px;
+			width: 100px;
+			background-color: cyan;
+			margin: 50px;
+		}
+	</style>
+</head>
+<body>
+	<div id="msg">
+		{{ msg }}
+		<div class="outer" @click='outer'>
+			outer
+			<div class="inner" @click='inner'>
+				inner
+			</div>
+		</div>
+		<a @click.prevent.once='jump' href="https://www.baidu.com">百度几下</a>
+		<!-- .passive可以时滚动事件在滚动时立即触发(原本先执行滚动事件后产生效果),可提供移动端性能 -->
+	</div>
+<script type="text/javascript">
+	new Vue({
+		el:'#msg',
+		data:{
+			msg:'事件修饰符'
+		},
+		methods:{
+			outer:function(){
+				console.log('outer!');
+			},
+			inner:function(){
+				console.log('inner!');
+			},
+			jump:function(){
+				console.log('stop');
+				// alert(’stop‘);
+			}
+		}
+	})
+</script>
+</body>
+</html>

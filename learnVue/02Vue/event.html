@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>时间传参</title>
+	<meta charset="utf-8">
+	<script src="../vue.js"></script>
+</head>
+<body>
+	<!-- 模拟表格的产生，操作列及删除按钮 -->
+	<div id="app">
+		<table>
+			<tr v-for='(item) in arr' :key='item.id'>
+				<td>{{item.id}}</td>
+				<td>{{item.name}}</td>
+				<td>{{item.age}}</td>
+				<td>
+					<button @click='toEidt($event,item)'>修改</button>
+					<button @click='toDelete($event,item)'>删除</button>
+				</td>
+			</tr>
+		</table>
+	</div>
+<script type="text/javascript">
+	new Vue({
+		el:'#app',
+		data:{
+			arr: [{id:01,name:'111',age:10},{id:02,name:'222',age:20},{id:03,name:'333',age:30}]
+		},
+		methods:{
+			toEidt:function(e,item){
+
+			},
+			toDelete:function(e.item){
+
+			}
+		}
+	})
+</script>
+</body>
+</html>

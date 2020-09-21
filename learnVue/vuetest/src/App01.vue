@@ -57,6 +57,7 @@ export default {
           backgroundColor:'red'
         }
       }
+      // deep:true        深度监听
     }
   }
   // components: {

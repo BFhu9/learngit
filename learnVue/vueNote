@@ -1,0 +1,45 @@
+1.MVC模式和MVVM模式的区别      VM ViewModel
+2.Vue与JQ的区别
+	vue是一个框架，不操作DOM，面向数据；JQ是一个库，封装DOM，动画，ajax
+3.Vue双向绑定核心：虚拟DOM
+4.v-if和v-show的区别：
+	v-if如果为false，第一次直接不渲染，假如已经存在则从DOM中移除
+	v-show第一次都会渲染，值变为false时，则将display设置为none
+	如果反复更改渲染则使用v-show，如果更改次数少则使用v-if
+5.Vue中使用this指向均为vue实例对象
+6.实例生命周期
+	beforeCreate(){} 	------初始化时间处理程序，生命周期
+	created(){}    ------初始化了数据和方法,将它们绑定到了实例上
+	beforeMount(){}   ------挂载之前
+	mounted(){}   ------挂载成功
+	beforeUpdate   ------更新之前
+	Updated   ------更新成功
+	beforeDestroy(){}
+	destroyed(){}
+7.组件内容需要用根<div>包裹
+8定义组件时data为对象时，创建多个该组件时对象的属性值将会一起更改！！【不希望这种情况发生时data应定义为函数，return值为对象
+9.设定属性时属性名含’-‘的（例如backgroundColor）时属性名要用“ ”包含，或者改用驼峰命名
+10.事件流番外：在事件冒泡中，event.target一直指向触发事件的事件源  event.currentTarget是当前执行事件处理程序的目标元素
+11.视图层 ---》数据模型
+		在input上监听键盘抬起事件,获取input的value值设置给数据模型
+	数据模型 ---》视图层
+		Object.defineProperty(obj,username,{
+			configurable:,
+			enumberable:,
+			getter(){},
+			setter(params){
+			}
+		})
+12.深度监听(deep:)可以监听引用数据类型中数据发生变化
+13.scope是插槽作用域对象{},内部存放插槽声明的时候传递的属性
+14.混入(mixin)同名钩子函数时,将合并为一个数组,调用时mixin内钩子函数将优先调用
+15.当混入对象与组件对象内属性有冲突时,以组件对象为主
+
+
+
+
+
+疑:
+1.payload定义
+2.action中方法的context
+3.res结构

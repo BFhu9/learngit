@@ -7,6 +7,8 @@
           <h1>{{ admin }}欢迎你</h1>
         </template>
         <template v-slot:buttom>
+          <!-- 加了’ ‘的为动态传参，不加为静态传参 -->
+          <!-- 动态传参加：可以传number,boolean,object,array,变量的值，不加则仅为字符串 -->
          <HelloWorld user = 'admin' :uList='userList' @changeUser='newUser'></HelloWorld>
         </template>
       </layout>
